@@ -8,8 +8,8 @@ This pipeline performs the following steps:
 
 1. **Download NCBI metadata** - Retrieves all genome assemblies for Arecaceae and Curculionidae from NCBI
 2. **Enrich with taxonomy** - Adds higher taxonomy (subfamily to subtribe) from:
-   - World Flora Online (WFO) Plant List for Arecaceae
-   - Catalogue of Life (COL) for Curculionidae
+   - iNaturalist for Arecaceae
+   - Manual curation for Curculionidae (based on Handbook of Zoology classification)
 3. **Generate statistics** - Calculates high-quality genome statistics and produces a natural language summary
 
 ## Requirements
@@ -41,11 +41,14 @@ You can also run each step individually:
 # Step 1: Download NCBI metadata
 python3 01_download_ncbi_metadata.py
 
-# Step 2: Enrich Arecaceae with WFO taxonomy
+# Step 2: Enrich Arecaceae with iNaturalist taxonomy
 python3 02_enrich_arecaceae_taxonomy.py
 
-# Step 3: Enrich Curculionidae with COL taxonomy
-python3 03_enrich_curculionidae_taxonomy.py
+# Step 3: Manually curate Curculionidae taxonomy
+# (Edit curculionidae_assemblies_enriched.csv with subfamily and tribe classifications
+# based on Handbook of Zoology: Beutel et al. (2014) Coleoptera, Beetles,
+# Volume 3, Morphology and Systematics (Phytophaga).
+# Subfamily added for all Curculionidae; tribe added specifically for Curculioninae.)
 
 # Step 4: Generate statistics and summary
 python3 04_generate_statistics.py
@@ -78,17 +81,20 @@ Genomes are classified as "high-quality" if they meet either criterion:
 
 ## Taxonomy Sources
 
-### Arecaceae (WFO Plant List)
-- **API**: https://list.worldfloraonline.org/gql.php
-- **Method**: GraphQL queries for species taxonomy
+### Arecaceae (iNaturalist)
+- **API**: https://api.inaturalist.org/v1
+- **Method**: REST API taxon search
 - **Ranks retrieved**: Family, subfamily, tribe, subtribe, genus
 - **Special focus**: Subtribe representation within tribe Cocoseae
+- **Note**: iNaturalist provides community-curated taxonomy with good coverage of palm higher taxonomy
 
-### Curculionidae (Catalogue of Life)
-- **API**: https://api.catalogueoflife.org
-- **Method**: REST API name search and classification
-- **Ranks retrieved**: Family, subfamily, tribe (when available), genus
-- **Note**: Tribal taxonomy often unstable/unavailable, so analysis focuses on subfamily and genus
+### Curculionidae (Manual Curation)
+- **Source**: Handbook of Zoology - Beutel, R. G., & Leschen, R. A. B. (2014). Coleoptera, Beetles, Volume 3: Morphology and Systematics (Phytophaga). De Gruyter. https://doi.org/10.1515/9783110274462
+- **Method**: Manual assignment of subfamily and tribe classifications based on authoritative literature
+- **Subfamilies recognized**: 12 subfamilies in Curculionidae
+- **Tribes recognized**: 34 tribes in Curculioninae (plus genera of uncertain placement, Incertae Sedis)
+- **Ranks used**: Family, subfamily, tribe (for Curculioninae), genus
+- **Note**: Manual curation ensures taxonomic accuracy and consistency with the most authoritative systematic treatments. Tribal taxonomy was added for Curculioninae from the same source. For other subfamilies, tribal taxonomy is often unstable/unavailable, so analysis focuses on subfamily and genus.
 
 ## Diversity Estimates
 
@@ -103,8 +109,9 @@ The script uses the following diversity estimates for comparison:
 ### Curculionidae
 - **Species**: ~51,000
 - **Genera**: ~4,600
-- **Subfamilies**: ~8 major subfamilies
-- **Source**: General estimates (one of the largest animal families)
+- **Subfamilies**: 12 subfamilies (Handbook of Zoology classification)
+- **Tribes in Curculioninae**: 34 tribes (Handbook of Zoology classification)
+- **Source**: General estimates (one of the largest animal families); subfamily and tribe counts from Beutel et al. (2014)
 
 These estimates can be updated in `04_generate_statistics.py` in the `DIVERSITY_ESTIMATES` dictionary.
 
@@ -128,11 +135,11 @@ The scripts can be adapted for other taxonomic groups by:
 ## Runtime
 
 - **Step 1** (NCBI download): 2-5 minutes
-- **Step 2** (WFO enrichment): 5-15 minutes (depends on number of species)
-- **Step 3** (COL enrichment): 5-15 minutes (depends on number of species)
+- **Step 2** (iNaturalist enrichment): 5-15 minutes (depends on number of species)
+- **Step 3** (Manual curation): Variable (depends on taxonomic expertise)
 - **Step 4** (Statistics): < 1 minute
 
-**Total**: ~15-35 minutes
+**Total**: ~10-25 minutes (plus manual curation time)
 
 ## API Rate Limiting
 
@@ -147,10 +154,10 @@ If you get NCBI Entrez errors, ensure:
 3. NCBI servers are accessible
 
 ### Taxonomy Not Found
-Some species may not be found in WFO or COL:
+Some species may not be found in iNaturalist:
 - Recent species descriptions may not be in databases yet
 - Synonyms may be used in NCBI but not recognized by taxonomy APIs
-- Manual curation may be needed for these cases
+- Manual curation may be needed for these cases (as done for Curculionidae)
 
 ### Empty Results
 If no results are returned:
@@ -163,8 +170,8 @@ If no results are returned:
 If you use this analysis, please cite:
 
 - **NCBI**: https://www.ncbi.nlm.nih.gov/
-- **World Flora Online**: http://www.worldfloraonline.org/
-- **Catalogue of Life**: https://www.catalogueoflife.org/
+- **iNaturalist**: https://www.inaturalist.org/
+- **Handbook of Zoology**: Beutel, R. G., & Leschen, R. A. B. (2014). Coleoptera, Beetles, Volume 3: Morphology and Systematics (Phytophaga). De Gruyter. https://doi.org/10.1515/9783110274462
 
 ## Authors
 

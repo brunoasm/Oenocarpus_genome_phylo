@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Enrich Arecaceae genome data with WFO Plant List taxonomy (subtribe to subfamily).
+Enrich Arecaceae genome data with iNaturalist taxonomy (subtribe to subfamily).
 """
 
 import csv
@@ -10,12 +10,12 @@ import requests
 from collections import defaultdict
 import sys
 
-# WFO GraphQL API endpoint
-WFO_API = "https://list.worldfloraonline.org/gql.php"
+# iNaturalist API endpoint
+INAT_API = "https://api.inaturalist.org/v1"
 
-def query_wfo_taxonomy(genus, species):
+def query_inat_taxonomy(genus, species):
     """
-    Query WFO Plant List for taxonomy information.
+    Query iNaturalist for taxonomy information.
 
     Args:
         genus: Genus name
@@ -24,93 +24,77 @@ def query_wfo_taxonomy(genus, species):
     Returns:
         Dictionary with taxonomy information or None
     """
-    # GraphQL query to get taxonomy
-    query = """
-    query($scientificName: String!) {
-        taxonNameMatch(scientificName: $scientificName) {
-            name {
-                fullNameStringPlain
-                rank
-            }
-            acceptedName {
-                fullNameStringPlain
-                id
-            }
-            acceptedPlacement {
-                family {
-                    fullNameStringPlain
-                }
-                subfamily {
-                    fullNameStringPlain
-                }
-                tribe {
-                    fullNameStringPlain
-                }
-                subtribe {
-                    fullNameStringPlain
-                }
-                genus {
-                    fullNameStringPlain
-                }
-            }
-        }
-    }
-    """
-
     scientific_name = f"{genus} {species}".strip()
 
     try:
-        response = requests.post(
-            WFO_API,
-            json={
-                "query": query,
-                "variables": {"scientificName": scientific_name}
-            },
-            timeout=30
-        )
+        # Search for the taxon
+        search_url = f"{INAT_API}/taxa"
+        params = {
+            "q": scientific_name,
+            "rank": "species",
+            "is_active": "true"
+        }
+
+        response = requests.get(search_url, params=params, timeout=30)
 
         if response.status_code != 200:
-            print(f"  Warning: WFO API returned status {response.status_code} for {scientific_name}")
+            print(f"  Warning: iNaturalist API returned status {response.status_code} for {scientific_name}")
             return None
 
         data = response.json()
 
-        if "errors" in data:
-            print(f"  Warning: WFO API errors for {scientific_name}: {data['errors']}")
+        if not data.get("results"):
+            print(f"  Not found in iNaturalist")
             return None
 
-        # Extract taxonomy from response
-        if "data" in data and data["data"].get("taxonNameMatch"):
-            match = data["data"]["taxonNameMatch"]
+        # Get the first result (best match)
+        result = data["results"][0]
 
-            # Get accepted name if different from query
-            accepted_name = scientific_name
-            if match.get("acceptedName"):
-                accepted_name = match["acceptedName"].get("fullNameStringPlain", scientific_name)
+        # Verify it's the right family (Arecaceae)
+        ancestors = result.get("ancestors", [])
+        family_match = any(a.get("name") == "Arecaceae" for a in ancestors)
 
-            placement = match.get("acceptedPlacement", {})
+        if not family_match:
+            print(f"  Warning: Found taxon but not in Arecaceae family")
+            return None
 
-            return {
-                "accepted_name": accepted_name,
-                "family": placement.get("family", {}).get("fullNameStringPlain", "") if placement.get("family") else "",
-                "subfamily": placement.get("subfamily", {}).get("fullNameStringPlain", "") if placement.get("subfamily") else "",
-                "tribe": placement.get("tribe", {}).get("fullNameStringPlain", "") if placement.get("tribe") else "",
-                "subtribe": placement.get("subtribe", {}).get("fullNameStringPlain", "") if placement.get("subtribe") else "",
-                "genus_wfo": placement.get("genus", {}).get("fullNameStringPlain", "") if placement.get("genus") else "",
-            }
+        # Extract taxonomy from ancestors
+        taxonomy = {
+            "accepted_name": result.get("name", scientific_name),
+            "family": "",
+            "subfamily": "",
+            "tribe": "",
+            "subtribe": "",
+            "genus_inat": "",
+        }
 
-        return None
+        for ancestor in ancestors:
+            rank = ancestor.get("rank", "").lower()
+            name = ancestor.get("name", "")
+
+            if rank == "family":
+                taxonomy["family"] = name
+            elif rank == "subfamily":
+                taxonomy["subfamily"] = name
+            elif rank == "tribe":
+                taxonomy["tribe"] = name
+            elif rank == "subtribe":
+                taxonomy["subtribe"] = name
+            elif rank == "genus":
+                taxonomy["genus_inat"] = name
+
+        return taxonomy
 
     except requests.exceptions.Timeout:
-        print(f"  Warning: Timeout querying WFO for {scientific_name}")
+        print(f"  Warning: Timeout querying iNaturalist for {scientific_name}")
         return None
     except Exception as e:
-        print(f"  Warning: Error querying WFO for {scientific_name}: {e}")
+        print(f"  Warning: Error querying iNaturalist for {scientific_name}: {e}")
         return None
 
 def enrich_arecaceae_data(input_file, output_file):
     """
-    Read Arecaceae assemblies and enrich with WFO taxonomy.
+    Read Arecaceae assemblies and enrich with iNaturalist taxonomy.
 
     Args:
         input_file: Input CSV file with assembly data
@@ -139,7 +123,7 @@ def enrich_arecaceae_data(input_file, output_file):
                 "subfamily": "",
                 "tribe": "",
                 "subtribe": "",
-                "genus_wfo": "",
+                "genus_inat": "",
             })
             enriched.append(assembly)
             failed.append(species_name)
@@ -150,8 +134,8 @@ def enrich_arecaceae_data(input_file, output_file):
         genus = parts[0]
         species = parts[1] if len(parts) > 1 else ""
 
-        # Query WFO
-        taxonomy = query_wfo_taxonomy(genus, species)
+        # Query iNaturalist
+        taxonomy = query_inat_taxonomy(genus, species)
 
         if taxonomy:
             print(f"  Found: {taxonomy['accepted_name']}")
@@ -164,14 +148,14 @@ def enrich_arecaceae_data(input_file, output_file):
 
             assembly.update(taxonomy)
         else:
-            print(f"  Not found in WFO")
+            print(f"  Not found in iNaturalist")
             assembly.update({
                 "accepted_name": "",
                 "family": "",
                 "subfamily": "",
                 "tribe": "",
                 "subtribe": "",
-                "genus_wfo": "",
+                "genus_inat": "",
             })
             failed.append(species_name)
 
@@ -220,7 +204,7 @@ def extract_all_taxa(enriched_data, output_file):
 
     # Save to file
     with open(output_file, 'w') as f:
-        f.write("# Higher Taxa in Arecaceae (from WFO Plant List)\n")
+        f.write("# Higher Taxa in Arecaceae (from iNaturalist)\n")
         f.write("# Format: rank | taxon name\n\n")
 
         for rank in ["subfamily", "tribe", "subtribe"]:
@@ -244,7 +228,7 @@ def main():
     taxa_file = "arecaceae_higher_taxa.txt"
 
     print("="*60)
-    print("Enriching Arecaceae genome data with WFO taxonomy")
+    print("Enriching Arecaceae genome data with iNaturalist taxonomy")
     print("="*60)
 
     # Enrich data

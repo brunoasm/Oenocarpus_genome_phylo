@@ -10,7 +10,8 @@
     "Curculionidae": {
       "total_species": 51000,
       "total_genera": 4600,
-      "total_subfamilies": 8
+      "total_subfamilies": 12,
+      "total_tribes_curculioninae": 34
     }
   },
   "arecaceae": {
@@ -49,14 +50,25 @@
     "hq_species": 31,
     "all_genera": 35,
     "hq_genera": 23,
-    "subfamilies": 6,
+    "subfamilies": 10,
     "subfamilies_list": [
       "Ceutorhynchinae",
-      "Cryptorhynchinae",
+      "Conoderinae",
+      "Curculioninae",
+      "Dryophthorinae",
       "Entiminae",
+      "Hyperinae",
+      "Mesoptiliinae",
       "Molytinae",
       "Platypodinae",
       "Scolytinae"
-    ]
+    ],
+    "curculioninae_tribes": 3,
+    "curculioninae_tribes_list": [
+      "Anthonomini",
+      "Curculionini",
+      "Rhamphini"
+    ],
+    "curculioninae_genera": 3
   }
 }

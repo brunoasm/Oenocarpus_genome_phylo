@@ -19,7 +19,8 @@ DIVERSITY_ESTIMATES = {
     "Curculionidae": {
         "total_species": 51000,  # Approximate (one of the largest animal families)
         "total_genera": 4600,  # Approximate
-        "total_subfamilies": 8,  # Major subfamilies
+        "total_subfamilies": 12,  # Handbook of Zoology (Beutel et al. 2014)
+        "total_tribes_curculioninae": 34,  # Curculioninae tribes (Handbook of Zoology)
     }
 }
 
@@ -120,7 +121,7 @@ def analyze_curculionidae(input_file):
     Analyze Curculionidae genome assemblies.
 
     Args:
-        input_file: Path to enriched CSV file
+        input_file: Path to enriched CSV file (with manually curated taxonomy)
 
     Returns:
         Dictionary with statistics
@@ -146,8 +147,17 @@ def analyze_curculionidae(input_file):
             if is_high_quality(a):
                 hq_genera.add(genus)
 
-    # Count subfamilies (using Wikidata field name)
+    # Count subfamilies (manually curated based on Handbook of Zoology)
     subfamilies = set(a["subfamily"] for a in hq_assemblies if a.get("subfamily"))
+
+    # Count tribes specifically for Curculioninae
+    curculioninae_assemblies = [a for a in hq_assemblies if a.get("subfamily") == "Curculioninae"]
+    curculioninae_tribes = set(a["tribe"] for a in curculioninae_assemblies if a.get("tribe"))
+    curculioninae_genera = set()
+    for a in curculioninae_assemblies:
+        if a["species_name"] and " " in a["species_name"]:
+            genus = a["species_name"].split()[0]
+            curculioninae_genera.add(genus)
 
     return {
         "total_assemblies": len(assemblies),
@@ -158,6 +168,9 @@ def analyze_curculionidae(input_file):
         "hq_genera": len(hq_genera),
         "subfamilies": len(subfamilies),
         "subfamilies_list": sorted(subfamilies),
+        "curculioninae_tribes": len(curculioninae_tribes),
+        "curculioninae_tribes_list": sorted(curculioninae_tribes),
+        "curculioninae_genera": len(curculioninae_genera),
     }
 
 def generate_summary_paragraph(arec_stats, curc_stats):
@@ -183,46 +196,29 @@ def generate_summary_paragraph(arec_stats, curc_stats):
     curc_species_pct = (curc_stats["hq_species"] / curc_div["total_species"]) * 100
     curc_genera_pct = (curc_stats["hq_genera"] / curc_div["total_genera"]) * 100
     curc_subfamily_pct = (curc_stats["subfamilies"] / curc_div["total_subfamilies"]) * 100
+    curc_curculioninae_tribe_pct = (curc_stats["curculioninae_tribes"] / curc_div["total_tribes_curculioninae"]) * 100
+
+    # Build paragraph with proper line breaks
+    arecaceae_section = f"""ARECACEAE (Palms)
+-----------------
+Of the {arec_stats['total_assemblies']} genome assemblies available for Arecaceae in NCBI, {arec_stats['hq_assemblies']} ({(arec_stats['hq_assemblies']/arec_stats['total_assemblies']*100):.1f}%) are high-quality (chromosome-level or scaffold N50 > 10 Mb). These high-quality assemblies represent {arec_stats['hq_species']} species ({arec_species_pct:.2f}% of ~{arec_div['total_species']:,} described palm species) from {arec_stats['hq_genera']} genera ({arec_genera_pct:.1f}% of {arec_div['total_genera']} genera). At higher taxonomic levels, the assemblies span {arec_stats['subfamilies']} of {arec_div['total_subfamilies']} subfamilies ({arec_subfamily_pct:.0f}%), {arec_stats['tribes']} tribes, and {arec_stats['subtribes']} subtribes. Within the tribe Cocoseae specifically, high-quality genomes represent {arec_stats['cocoseae_subtribes']} of {arec_div['total_subtribes_cocoseae']} subtribes ({arec_cocoseae_subtribe_pct:.0f}%) and {arec_stats['cocoseae_genera']} {'genus' if arec_stats['cocoseae_genera'] == 1 else 'genera'}. The represented subfamilies are: {', '.join(arec_stats['subfamilies_list'])}."""
+
+    curculionidae_section = f"""CURCULIONIDAE (Weevils)
+-----------------------
+For Curculionidae, {curc_stats['total_assemblies']} genome assemblies are available in NCBI, with {curc_stats['hq_assemblies']} ({(curc_stats['hq_assemblies']/curc_stats['total_assemblies']*100):.1f}%) meeting high-quality criteria. These assemblies represent {curc_stats['hq_species']} species ({curc_species_pct:.3f}% of ~{curc_div['total_species']:,} described weevil species) across {curc_stats['hq_genera']} genera ({curc_genera_pct:.2f}% of ~{curc_div['total_genera']:,} genera). At the subfamily level, {curc_stats['subfamilies']} of {curc_div['total_subfamilies']} subfamilies ({curc_subfamily_pct:.0f}%, based on Handbook of Zoology classification) are represented by high-quality genome assemblies. The represented subfamilies are: {', '.join(curc_stats['subfamilies_list']) if curc_stats['subfamilies_list'] else 'data pending taxonomic enrichment'}. Within the subfamily Curculioninae specifically, high-quality genomes represent {curc_stats['curculioninae_tribes']} of {curc_div['total_tribes_curculioninae']} tribes ({curc_curculioninae_tribe_pct:.1f}%) and {curc_stats['curculioninae_genera']} {'genus' if curc_stats['curculioninae_genera'] == 1 else 'genera'}. The represented tribes are: {', '.join(curc_stats['curculioninae_tribes_list'])}."""
+
+    comparative_section = f"""COMPARATIVE PERSPECTIVE
+-----------------------
+Both families show relatively limited genomic sampling, with high-quality genomes representing less than 1% of described species diversity in both cases. At the subfamily level, both families show relatively good representation, with Curculionidae having {curc_subfamily_pct:.0f}% of major subfamilies and Arecaceae having {arec_subfamily_pct:.0f}% of subfamilies represented by high-quality genome assemblies. However, Curculionidae shows better coverage of subfamily-level diversity, likely reflecting greater sequencing effort in this economically important family. The addition of genomes for Oenocarpus mapora (Arecaceae: Cocoseae) and Anchylorhynchus bicarinatus (Curculionidae) represents valuable contributions to the genomic characterization of these diverse plant and insect families."""
 
     paragraph = f"""
 GENOME ASSEMBLY STATISTICS FOR ARECACEAE AND CURCULIONIDAE
 
-ARECACEAE (Palms)
------------------
-Of the {arec_stats['total_assemblies']} genome assemblies available for Arecaceae in NCBI,
-{arec_stats['hq_assemblies']} ({(arec_stats['hq_assemblies']/arec_stats['total_assemblies']*100):.1f}%)
-are high-quality (chromosome-level or scaffold N50 > 10 Mb). These high-quality assemblies
-represent {arec_stats['hq_species']} species ({arec_species_pct:.2f}% of ~{arec_div['total_species']:,}
-described palm species) from {arec_stats['hq_genera']} genera ({arec_genera_pct:.1f}% of
-{arec_div['total_genera']} genera). At higher taxonomic levels, the assemblies span
-{arec_stats['subfamilies']} of {arec_div['total_subfamilies']} subfamilies
-({arec_subfamily_pct:.0f}%), {arec_stats['tribes']} tribes, and {arec_stats['subtribes']} subtribes.
-Within the tribe Cocoseae specifically, high-quality genomes represent {arec_stats['cocoseae_subtribes']}
-of {arec_div['total_subtribes_cocoseae']} subtribes ({arec_cocoseae_subtribe_pct:.0f}%) and
-{arec_stats['cocoseae_genera']} {'genus' if arec_stats['cocoseae_genera'] == 1 else 'genera'}. The represented subfamilies are: {', '.join(arec_stats['subfamilies_list'])}.
+{arecaceae_section}
 
-CURCULIONIDAE (Weevils)
------------------------
-For Curculionidae, {curc_stats['total_assemblies']} genome assemblies are available in NCBI,
-with {curc_stats['hq_assemblies']} ({(curc_stats['hq_assemblies']/curc_stats['total_assemblies']*100):.1f}%)
-meeting high-quality criteria. These assemblies represent {curc_stats['hq_species']} species
-({curc_species_pct:.3f}% of ~{curc_div['total_species']:,} described weevil species) across
-{curc_stats['hq_genera']} genera ({curc_genera_pct:.2f}% of ~{curc_div['total_genera']:,} genera).
-At the subfamily level, {curc_stats['subfamilies']} of approximately {curc_div['total_subfamilies']}
-major subfamilies ({curc_subfamily_pct:.0f}%) are represented by high-quality genome assemblies.
-The represented subfamilies are: {', '.join(curc_stats['subfamilies_list']) if curc_stats['subfamilies_list'] else 'data pending taxonomic enrichment'}.
+{curculionidae_section}
 
-COMPARATIVE PERSPECTIVE
------------------------
-Both families show relatively limited genomic sampling, with high-quality genomes representing
-less than 1% of described species diversity in both cases. At the subfamily level, both families
-show relatively good representation, with Curculionidae having {curc_subfamily_pct:.0f}% of major
-subfamilies and Arecaceae having {arec_subfamily_pct:.0f}% of subfamilies represented by high-quality
-genome assemblies. However, Curculionidae shows better coverage of subfamily-level diversity, likely
-reflecting greater sequencing effort in this economically important family. The addition of genomes
-for Oenocarpus mapora (Arecaceae: Cocoseae) and Anchylorhynchus bicarinatus (Curculionidae)
-represents valuable contributions to the genomic characterization of these diverse plant and
-insect families.
+{comparative_section}
 """
 
     return paragraph
@@ -274,6 +270,8 @@ def main():
     print(f"  HQ species: {curc_stats['hq_species']}")
     print(f"  HQ genera: {curc_stats['hq_genera']}")
     print(f"  Subfamilies: {curc_stats['subfamilies']}")
+    print(f"  Curculioninae tribes: {curc_stats['curculioninae_tribes']}")
+    print(f"  Curculioninae genera: {curc_stats['curculioninae_genera']}")
 
     # Generate summary paragraph
     print("\n" + "="*70)

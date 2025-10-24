@@ -3,37 +3,12 @@ GENOME ASSEMBLY STATISTICS FOR ARECACEAE AND CURCULIONIDAE
 
 ARECACEAE (Palms)
 -----------------
-Of the 25 genome assemblies available for Arecaceae in NCBI,
-12 (48.0%)
-are high-quality (chromosome-level or scaffold N50 > 10 Mb). These high-quality assemblies
-represent 6 species (0.23% of ~2,600
-described palm species) from 5 genera (2.8% of
-181 genera). At higher taxonomic levels, the assemblies span
-2 of 5 subfamilies
-(40%), 3 tribes, and 2 subtribes.
-Within the tribe Cocoseae specifically, high-quality genomes represent 1
-of 4 subtribes (25%) and
-1 genus. The represented subfamilies are: Arecoideae, Coryphoideae.
+Of the 25 genome assemblies available for Arecaceae in NCBI, 12 (48.0%) are high-quality (chromosome-level or scaffold N50 > 10 Mb). These high-quality assemblies represent 6 species (0.23% of ~2,600 described palm species) from 5 genera (2.8% of 181 genera). At higher taxonomic levels, the assemblies span 2 of 5 subfamilies (40%), 3 tribes, and 2 subtribes. Within the tribe Cocoseae specifically, high-quality genomes represent 1 of 4 subtribes (25%) and 1 genus. The represented subfamilies are: Arecoideae, Coryphoideae.
 
 CURCULIONIDAE (Weevils)
 -----------------------
-For Curculionidae, 95 genome assemblies are available in NCBI,
-with 38 (40.0%)
-meeting high-quality criteria. These assemblies represent 31 species
-(0.061% of ~51,000 described weevil species) across
-23 genera (0.50% of ~4,600 genera).
-At the subfamily level, 6 of approximately 8
-major subfamilies (75%) are represented by high-quality genome assemblies.
-The represented subfamilies are: Ceutorhynchinae, Cryptorhynchinae, Entiminae, Molytinae, Platypodinae, Scolytinae.
+For Curculionidae, 95 genome assemblies are available in NCBI, with 38 (40.0%) meeting high-quality criteria. These assemblies represent 31 species (0.061% of ~51,000 described weevil species) across 23 genera (0.50% of ~4,600 genera). At the subfamily level, 10 of 12 subfamilies (83%, based on Handbook of Zoology classification) are represented by high-quality genome assemblies. The represented subfamilies are: Ceutorhynchinae, Conoderinae, Curculioninae, Dryophthorinae, Entiminae, Hyperinae, Mesoptiliinae, Molytinae, Platypodinae, Scolytinae. Within the subfamily Curculioninae specifically, high-quality genomes represent 3 of 34 tribes (8.8%) and 3 genera. The represented tribes are: Anthonomini, Curculionini, Rhamphini.
 
 COMPARATIVE PERSPECTIVE
 -----------------------
-Both families show relatively limited genomic sampling, with high-quality genomes representing
-less than 1% of described species diversity in both cases. At the subfamily level, both families
-show relatively good representation, with Curculionidae having 75% of major
-subfamilies and Arecaceae having 40% of subfamilies represented by high-quality
-genome assemblies. However, Curculionidae shows better coverage of subfamily-level diversity, likely
-reflecting greater sequencing effort in this economically important family. The addition of genomes
-for Oenocarpus mapora (Arecaceae: Cocoseae) and Anchylorhynchus bicarinatus (Curculionidae)
-represents valuable contributions to the genomic characterization of these diverse plant and
-insect families.
+Both families show relatively limited genomic sampling, with high-quality genomes representing less than 1% of described species diversity in both cases. At the subfamily level, both families show relatively good representation, with Curculionidae having 83% of major subfamilies and Arecaceae having 40% of subfamilies represented by high-quality genome assemblies. However, Curculionidae shows better coverage of subfamily-level diversity, likely reflecting greater sequencing effort in this economically important family. The addition of genomes for Oenocarpus mapora (Arecaceae: Cocoseae) and Anchylorhynchus bicarinatus (Curculionidae) represents valuable contributions to the genomic characterization of these diverse plant and insect families.
