@@ -1,0 +1,96 @@
+accession,organism,species_name,strain,assembly_name,assembly_level,scaffold_n50,contig_n50,submission_date,sequencing_tech,biosample,taxid
+GCA_965663545.1,Magdalis barbicornis (beetles),Magdalis barbicornis,,icMagBarb1.hap1.1,Chromosome,,,2025/08/23 00:00,30,SAMEA115574528,878129
+GCA_965663605.1,Magdalis barbicornis (beetles),Magdalis barbicornis,,icMagBarb1.hap2.1,Scaffold,,,2025/08/10 00:00,30,SAMEA115574528,878129
+GCF_030347505.1,Rhynchophorus ferrugineus (red palm weevil),Rhynchophorus ferrugineus,,kcgeb_rfMv2,Scaffold,,,2023/06/22 00:00,100,SAMN33980146,354439
+GCA_965654395.1,Phyllobius argentatus (beetles),Phyllobius argentatus,,icPhyArge1.hap2.1,Chromosome,,,2025/08/03 00:00,64,SAMEA114805889,346824
+GCA_965654255.1,Phyllobius argentatus (beetles),Phyllobius argentatus,,icPhyArge1.hap1.1,Chromosome,,,2025/08/03 00:00,64,SAMEA114805889,346824
+GCA_965648465.1,Curculio glandium (beetles),Curculio glandium,,icCurGlan1.1 alternate haplotype,Scaffold,,,2025/07/28 00:00,32,SAMEA8603219,197013
+GCA_965648435.1,Curculio glandium (beetles),Curculio glandium,,icCurGlan1.1,Chromosome,,,2025/07/28 00:00,32,SAMEA8603219,197013
+GCA_965643735.1,Hypera rumicis (beetles),Hypera rumicis,,icHypRumi1.hap1.1,Chromosome,,,2025/07/19 00:00,43,SAMEA114805976,346786
+GCA_965643715.1,Hypera rumicis (beetles),Hypera rumicis,,icHypRumi1.hap2.1,Chromosome,,,2025/07/19 00:00,43,SAMEA114805976,346786
+GCA_965643005.1,Phyllobius virideaeris (beetles),Phyllobius virideaeris,,icPhyViri1.hap2.1,Chromosome,,,2025/07/19 00:00,60,SAMEA114805910,878368
+GCA_965642995.1,Phyllobius virideaeris (beetles),Phyllobius virideaeris,,icPhyViri1.hap1.1,Chromosome,,,2025/07/19 00:00,60,SAMEA114805910,878368
+GCA_965642045.1,Magdalis cerasi (beetles),Magdalis cerasi,,icMagCera1.1,Chromosome,,,2025/07/18 00:00,34,SAMEA110451647,1143066
+GCA_050242925.2,Anthonomus rubi (strawberry blossom weevil),Anthonomus rubi,,icAntRubi4_p1.2,Scaffold,,,2025/07/18 00:00,53.04,SAMN42926090,201759
+GCA_050242875.2,Anthonomus rubi (strawberry blossom weevil),Anthonomus rubi,,icAntRubi4_a1.2,Scaffold,,,2025/07/18 00:00,53.04,SAMN42926090,201759
+GCA_965642005.1,Magdalis cerasi (beetles),Magdalis cerasi,,icMagCera1.1 alternate haplotype,Scaffold,,,2025/07/13 00:00,34,SAMEA110451647,1143066
+GCA_051294475.1,Sternochetus mangiferae (beetles),Sternochetus mangiferae,,ASM5129447v1,Contig,,,2025/07/10 00:00,123,SAMN45883306,925794
+GCA_965641335.1,Cryptorhynchus lapathi (poplar-and-willow borer),Cryptorhynchus lapathi,,icCryLapa1.hap2.1,Scaffold,,,2025/07/09 00:00,143,SAMEA112964191,201897
+GCA_965641385.1,Cryptorhynchus lapathi (poplar-and-willow borer),Cryptorhynchus lapathi,,icCryLapa1.hap1.1,Chromosome,,,2025/07/09 00:00,143,SAMEA112964191,201897
+GCA_051048005.1,Curculio caryae (pecan weevil),Curculio caryae,,icCurCary2.1 alternate haplotype,Scaffold,,,2025/06/25 00:00,41,SAMN26453069,13025
+GCA_051047995.1,Curculio caryae (pecan weevil),Curculio caryae,,icCurCary2.1,Chromosome,,,2025/06/25 00:00,41,SAMN26453069,13025
+GCA_965260835.1,Leiosoma deflexum (beetles),Leiosoma deflexum,,icLeiDefl1.hap1.1,Chromosome,,,2025/04/25 00:00,33,SAMEA114644654,1342033
+GCA_965260825.1,Leiosoma deflexum (beetles),Leiosoma deflexum,,icLeiDefl1.hap2.1,Scaffold,,,2025/04/25 00:00,33,SAMEA114644654,1342033
+GCA_049176235.1,Xyleborus glabratus (beetles),Xyleborus glabratus,,ASM4917623v1,Scaffold,,,2025/03/29 00:00,60,SAMN46420224,889492
+GCA_049176215.1,Xyleborus bispinatus (beetles),Xyleborus bispinatus,,ASM4917621v1,Scaffold,,,2025/03/29 00:00,60,SAMN46420222,995685
+GCA_965178145.1,Ceutorhynchus obstrictus (beetles),Ceutorhynchus obstrictus,,icCeuObst1.1,Chromosome,,,2025/03/04 00:00,41,SAMEA111458184,307131
+GCA_965178005.1,Ceutorhynchus obstrictus (beetles),Ceutorhynchus obstrictus,,icCeuObst1.1 alternate haplotype,Contig,,,2025/03/04 00:00,41,SAMEA111458184,307131
+GCA_047936755.1,Sitophilus zeamais (maize weevil),Sitophilus zeamais,,ASM4793675v1,Chromosome,,,2025/02/24 00:00,64.5,SAMN46197516,7047
+GCA_041228525.2,Larinus minutus (beetles),Larinus minutus,,icLarMinu1_p1.2,Scaffold,,,2025/02/11 00:00,24.4,SAMN40082092,1342029
+GCA_041228435.2,Larinus minutus (beetles),Larinus minutus,,icLarMinu1_a1.2,Scaffold,,,2025/02/11 00:00,24.4,SAMN40082092,1342029
+GCA_965118225.1,Pachyrhinus lethierryi (beetles),Pachyrhinus lethierryi,,icPacLeth1.hap2.1,Scaffold,,,2025/01/29 00:00,89,SAMEA110019314,857166
+GCA_965118235.1,Pachyrhinus lethierryi (beetles),Pachyrhinus lethierryi,,icPacLeth1.hap1.1,Chromosome,,,2025/01/29 00:00,89,SAMEA110019314,857166
+GCA_046766355.1,Xyleborus affinis (beetles),Xyleborus affinis,,ASM4676635v1,Scaffold,,,2025/01/19 00:00,60,SAMN43785644,105120
+GCA_046736385.1,Eucryptorrhynchus scrobiculatus (beetles),Eucryptorrhynchus scrobiculatus,,TTW_Escr_1.0,Chromosome,,,2025/01/16 00:00,370,SAMN16131619,1552824
+GCA_046128435.1,Trigonoscuta pilosa (beetles),Trigonoscuta pilosa,,icTriPilo1.0.p,Scaffold,,,2024/12/17 00:00,35,SAMN41480436,2919430
+GCA_046128455.1,Trigonoscuta pilosa (beetles),Trigonoscuta pilosa,,icTriPilo1.0.a,Contig,,,2024/12/17 00:00,35,SAMN41480436,2919430
+GCA_042767475.1,Euwallacea fornicatus (beetles),Euwallacea fornicatus,,inEuwForn1.0.p,Scaffold,,,2024/10/08 00:00,45,SAMN41458310,995702
+GCA_042767365.1,Euwallacea fornicatus (beetles),Euwallacea fornicatus,,inEuwForn1.0.a,Scaffold,,,2024/10/08 00:00,45,SAMN41458310,995702
+GCA_964263185.1,Sitona lineatus (beetles),Sitona lineatus,,icSitLine7.1 alternate haplotype,Scaffold,,,2024/09/15 00:00,73,SAMEA9654286,202195
+GCA_964263205.1,Sitona lineatus (beetles),Sitona lineatus,,icSitLine7.1,Chromosome,,,2024/09/15 00:00,73,SAMEA9654286,202195
+GCA_041296355.1,Hypothenemus hampei (coffee berry borer),Hypothenemus hampei,,Hham4.1,Scaffold,,,2024/08/15 00:00,30,SAMN41346113,57062
+GCA_964211925.1,Kyklioacalles roboris (beetles),Kyklioacalles roboris,,icKykRobo1.hap1.1,Chromosome,,,2024/08/02 00:00,63,SAMEA113425821,501664
+GCA_964211975.1,Kyklioacalles roboris (beetles),Kyklioacalles roboris,,icKykRobo1.hap2.1,Scaffold,,,2024/08/02 00:00,63,SAMEA113425821,501664
+GCA_040894065.1,Eucryptorrhynchus brandti (beetles),Eucryptorrhynchus brandti,,TRW_Ebra_1.0,Chromosome,,,2024/07/26 00:00,770,SAMN16278373,436910
+GCA_040113315.1,Dendroctonus frontalis (southern pine beetle),Dendroctonus frontalis,,ASM4011331v1,Chromosome,,,2024/06/12 00:00,23,SAMN40982396,77161
+GCA_040115655.1,Euwallacea fornicatus (beetles),Euwallacea fornicatus,,ASM4011565v1,Chromosome,,,2024/06/11 00:00,31,SAMN40463292,995702
+GCF_040115645.1,Euwallacea fornicatus (beetles),Euwallacea fornicatus,,ASM4011564v1,Chromosome,,,2024/06/11 00:00,30,SAMN40463291,995702
+GCA_040114495.1,Euwallacea fornicatus (beetles),Euwallacea fornicatus,,PSHBm,Contig,,,2024/06/10 00:00,121,SAMN40619887,995702
+GCA_040114445.1,Euwallacea fornicatus (beetles),Euwallacea fornicatus,,PSHBf,Contig,,,2024/06/10 00:00,126,SAMN40619886,995702
+GCA_039881215.1,Euwallacea similis (beetles),Euwallacea similis,,ESF151.1,Chromosome,,,2024/05/29 00:00,45,SAMN40463298,1736056
+GCF_039881205.1,Euwallacea similis (beetles),Euwallacea similis,,ESF131.1,Chromosome,,,2024/05/29 00:00,31,SAMN40463297,1736056
+GCA_963992275.1,Barypeithes pellucidus (beetles),Barypeithes pellucidus,,icBarPell3.1 alternate haplotype,Contig,,,2024/03/16 00:00,37,SAMEA10167019,397350
+GCA_963991005.1,Barypeithes pellucidus (beetles),Barypeithes pellucidus,,icBarPell3.1,Chromosome,,,2024/03/16 00:00,37,SAMEA10167019,397350
+GCA_963971165.1,Philopedon plagiatum (beetles),Philopedon plagiatum,,icPhiPlag1.1,Chromosome,,,2024/03/04 00:00,20,SAMEA11025121,202117
+GCA_963971095.1,Philopedon plagiatum (beetles),Philopedon plagiatum,,icPhiPlag1.1 alternate haplotype,Scaffold,,,2024/03/04 00:00,20,SAMEA11025121,202117
+GCA_963969565.1,Polydrusus pterygomalis (beetles),Polydrusus pterygomalis,,icPolPter2.1 alternate haplotype,Scaffold,,,2024/02/27 00:00,66,SAMEA10979043,202138
+GCA_963969555.1,Polydrusus pterygomalis (beetles),Polydrusus pterygomalis,,icPolPter2.1,Chromosome,,,2024/02/26 00:00,66,SAMEA10979043,202138
+GCA_963920815.1,Polydrusus tereticollis (beetles),Polydrusus tereticollis,,icPolTere2.1 alternate haplotype,Contig,,,2023/12/26 00:00,47,SAMEA112963058,1342093
+GCA_963920685.1,Polydrusus tereticollis (beetles),Polydrusus tereticollis,,icPolTere2.1,Chromosome,,,2023/12/25 00:00,47,SAMEA112963058,1342093
+GCA_034092305.1,Diaprepes abbreviatus (Diaprepes root weevil),Diaprepes abbreviatus,,Dabb_1.0,Contig,,,2023/12/05 00:00,17,SAMN35105583,13040
+GCA_963576705.1,Polydrusus tereticollis (beetles),Polydrusus tereticollis,,icPolTere1.1,Chromosome,,,2023/11/03 00:00,15,SAMEA110451653,1342093
+GCA_963576715.1,Polydrusus tereticollis (beetles),Polydrusus tereticollis,,icPolTere1.1 alternate haplotype,Scaffold,,,2023/11/04 00:00,15,SAMEA110451653,1342093
+GCA_031761425.1,Cosmopolites sordidus (banana borer),Cosmopolites sordidus,,arthropoda_binned,Contig,,,2023/09/22 00:00,20,SAMN26804532,206492
+GCA_030620095.1,Kuschelorhynchus macadamiae (beetles),Kuschelorhynchus macadamiae,,CSIRO_AGI_Kmac_V1,Contig,,,2023/08/03 00:00,98,SAMN36766277,2754503
+GCA_958502075.1,Orchestes rusci (beetles),Orchestes rusci,,icOrcRusc1.1,Chromosome,,,2023/07/18 00:00,34,SAMEA110029153,878341
+GCA_958502085.1,Orchestes rusci (beetles),Orchestes rusci,,icOrcRusc1.1 alternate haplotype,Contig,,,2023/07/18 00:00,34,SAMEA110029153,878341
+GCA_951812425.1,Taphrorychus bicolor (beetles),Taphrorychus bicolor,,icTapBico1.1 alternate haplotype,Contig,,,2023/07/15 00:00,31,SAMEA10978899,105251
+GCA_951812265.1,Taphrorychus bicolor (beetles),Taphrorychus bicolor,,icTapBico1.1,Chromosome,,,2023/07/14 00:00,31,SAMEA10978899,105251
+GCA_030068095.1,Anthonomus grandis thurberiae (boll weevil),Anthonomus grandis,,icAntGran3.1,Chromosome,,,2023/06/05 00:00,11,SAMN25986102,2921224
+GCA_030068065.1,Anthonomus grandis thurberiae (boll weevil),Anthonomus grandis,,icAntGran3.1 alternate haplotype,Scaffold,,,2023/05/24 00:00,11,SAMN25986102,2921224
+GCA_949748235.1,Platypus cylindrus (beetles),Platypus cylindrus,,icPlaCyli4.1,Chromosome,,,2023/04/07 00:00,181,SAMEA110019313,298138
+GCA_949748395.1,Platypus cylindrus (beetles),Platypus cylindrus,,icPlaCyli4.1 alternate haplotype,Contig,,,2023/04/08 00:00,181,SAMEA110019313,298138
+GCA_945836925.1,Elaeidobius kamerunicus (beetles),Elaeidobius kamerunicus,,OPPWv2022,Contig,,,2023/01/09 00:00,30,SAMEA110363998,2663966
+GCA_917834065.1,Ceutorhynchus assimilis (cabbage seed weevil),Ceutorhynchus assimilis,,PGI_CEUTPL_v4,Chromosome,,,2022/07/12 00:00,40,SAMEA10332706,467358
+GCF_022605725.1,Anthonomus grandis grandis (boll weevil),Anthonomus grandis,,icAntGran1.3,Chromosome,,,2022/08/03 00:00,21,SAMN21902058,2921223
+GCA_024550625.1,Dendroctonus valens (red turpentine beetle),Dendroctonus valens,,ASM2455062v1,Scaffold,,,2022/08/05 00:00,806,SAMN21591519,77173
+GCA_022605985.2,Anthonomus grandis grandis (boll weevil),Anthonomus grandis,,icAntGran1.2 alternate haplotype,Scaffold,,,2022/07/29 00:00,21,SAMN21902058,2921223
+GCA_018691245.2,Ips nitidus (beetles),Ips nitidus,,ASM1869124v2,Chromosome,,,2022/06/07 00:00,94,SAMN18793407,432259
+GCA_020466635.2,Dendroctonus ponderosae (mountain pine beetle),Dendroctonus ponderosae,,Dpon_M_20191212v2,Scaffold,,,2021/10/13 00:00,747,SAMN16793775,77166
+GCF_020466585.1,Dendroctonus ponderosae (mountain pine beetle),Dendroctonus ponderosae,,Dpon_F_20191213v2,Scaffold,,,2021/10/13 00:00,747,SAMN16793753,77166
+GCA_935413205.1,Polydrusus cervinus (beetles),Polydrusus cervinus,,icPolCerv1.1,Chromosome,,,2022/04/28 00:00,38,SAMEA9359416,202137
+GCA_935413225.1,Polydrusus cervinus (beetles),Polydrusus cervinus,,icPolCerv1.1 alternate haplotype,Contig,,,2022/04/16 00:00,38,SAMEA9359416,202137
+GCA_019359885.1,Listronotus oregonensis (carrot weevil),Listronotus oregonensis,,ASM1935988v1,Scaffold,,,2021/07/27 00:00,67,SAMN18921935,412987
+GCA_019049505.1,Pachyrhynchus sulphureomaculatus (beetles),Pachyrhynchus sulphureomaculatus,,P_sulf_FINAL_HiC_nocotam_named,Chromosome,,,2021/06/29 00:00,40,SAMN19302444,2840399
+GCA_016904865.1,Pissodes strobi (beetles),Pissodes strobi,,GSC_weevil_1.0,Scaffold,,,2021/02/12 00:00,70,SAMN13254964,49927
+GCA_016097725.1,Ips typographus (beetles),Ips typographus,,CZU_Ityp_1.0,Contig,,,2020/12/16 00:00,211,SAMN16538706,55986
+GCA_014849505.1,Elaeidobius kamerunicus (beetles),Elaeidobius kamerunicus,,AAL_Ekam_1.0,Scaffold,,,2020/10/05 00:00,17,SAMN15158884,2663966
+GCA_014490705.1,Rhynchophorus ferrugineus (red palm weevil),Rhynchophorus ferrugineus,,UGA_Rfer_1.0.alt,Scaffold,,,2020/09/01 00:00,62,SAMN13762421,354439
+GCA_014462685.1,Rhynchophorus ferrugineus (red palm weevil),Rhynchophorus ferrugineus,,ASM1446268v1,Scaffold,,,2020/09/03 00:00,62,SAMN13762421,354439
+GCA_014170235.1,Listronotus bonariensis (Argentine stem weevil),Listronotus bonariensis,,ASM1417023v1,Scaffold,,,2020/08/12 00:00,38,SAMN15324643,292309
+GCA_013372445.1,Hypothenemus hampei (coffee berry borer),Hypothenemus hampei,,CENICAFE_Hham_1.1,Scaffold,,,2020/06/24 00:00,142,SAMN14646680,57062
+GCA_012979105.1,Rhynchophorus ferrugineus (red palm weevil),Rhynchophorus ferrugineus,,ASM1297910v1,Scaffold,,,2020/05/06 00:00,108,SAMN10995380,354439
+GCF_002938485.1,Sitophilus oryzae (rice weevil),Sitophilus oryzae,,Soryzae_2.0,Scaffold,,,2019/09/09 00:00,101,SAMN08382431,7048
+GCF_000355655.1,Dendroctonus ponderosae (mountain pine beetle),Dendroctonus ponderosae,,DendPond_male_1.0,Scaffold,,,2013/04/10 00:00,443,SAMN01121785,77166
+GCA_001012855.1,Hypothenemus hampei (coffee berry borer),Hypothenemus hampei,,ASM101285v1,Scaffold,,,2015/05/22 00:00,100,SAMN03448479,57062
+GCA_000346045.2,Dendroctonus ponderosae (mountain pine beetle),Dendroctonus ponderosae,,DendPond_female_1.0,Scaffold,,,2013/09/23 00:00,227,SAMN01121786,77166

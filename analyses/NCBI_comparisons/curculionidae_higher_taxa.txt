@@ -1,0 +1,56 @@
+# Higher Taxa in Curculionidae (from Wikidata)
+# Format: rank | taxon name
+
+
+## SUBFAMILY
+# Total: 10
+
+subfamily	Ceutorhynchinae
+subfamily	Cryptorhynchinae
+subfamily	Curculioninae
+subfamily	Dryophthorinae
+subfamily	Entiminae
+subfamily	Lixinae
+subfamily	Molytinae
+subfamily	Platypodinae
+subfamily	Rhynchophorinae
+subfamily	Scolytinae
+
+## GENUS
+# Total: 35
+
+genus	Anthonomus
+genus	Barypeithes
+genus	Ceutorhynchus
+genus	Cosmopolites
+genus	Cryptorhynchus
+genus	Curculio
+genus	Dendroctonus
+genus	Diaprepes
+genus	Elaeidobius
+genus	Eucryptorrhynchus
+genus	Euwallacea
+genus	Hypera
+genus	Hypothenemus
+genus	Ips
+genus	Kuschelorhynchus
+genus	Kyklioacalles
+genus	Larinus
+genus	Leiosoma
+genus	Listronotus
+genus	Magdalis
+genus	Orchestes
+genus	Pachyrhinus
+genus	Pachyrhynchus
+genus	Philopedon
+genus	Phyllobius
+genus	Pissodes
+genus	Platypus
+genus	Polydrusus
+genus	Rhynchophorus
+genus	Sitona
+genus	Sitophilus
+genus	Sternochetus
+genus	Taphrorychus
+genus	Trigonoscuta
+genus	Xyleborus

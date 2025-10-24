@@ -1,0 +1,26 @@
+accession,organism,species_name,strain,assembly_name,assembly_level,scaffold_n50,contig_n50,submission_date,sequencing_tech,biosample,taxid
+GCA_966131455.1,Elaeis guineensis (African oil palm),Elaeis guineensis,,Eg-DCM_assembly_v1,Scaffold,,,2025/08/12 00:00,48,SAMN47936308,51953
+GCA_051903695.1,Syagrus oleracea (monocots),Syagrus oleracea,,ASM5190369v1,Scaffold,,,2025/08/08 00:00,7,SAMN46512186,682624
+GCA_051530095.1,Phoenix dactylifera (date palm),Phoenix dactylifera,,ASM5153009v1,Chromosome,,,2025/07/24 00:00,215,SAMN46136514,42345
+GCA_050948065.1,Borassus flabellifer (monocots),Borassus flabellifer,,ASM5094806v1,Scaffold,,,2025/06/17 00:00,89.3,SAMN48099454,145675
+GCA_042465385.1,Chamaerops humilis (European fan palm),Chamaerops humilis,,ASM4246538v1,Chromosome,,,2024/10/01 00:00,17,SAMN39481424,54446
+GCA_042465325.1,Chamaerops humilis (European fan palm),Chamaerops humilis,,ASM4246532v1,Chromosome,,,2024/10/01 00:00,8.5,SAMN39481424,54446
+GCA_042465335.1,Chamaerops humilis (European fan palm),Chamaerops humilis,,ASM4246533v1,Chromosome,,,2024/10/01 00:00,8.5,SAMN39481424,54446
+GCA_003604295.2,Cocos nucifera (coconut palm),Cocos nucifera,,Cnuc_CPCRI_v2,Chromosome,,,2024/08/28 00:00,85,SAMN07738886,13894
+GCA_000441515.2,Elaeis oleifera (American oil palm),Elaeis oleifera,,EO12.1,Chromosome,,,2024/08/09 00:00,48,SAMN02981531,80265
+GCF_000442705.2,Elaeis guineensis (African oil palm),Elaeis guineensis,,EG11,Chromosome,,,2024/08/09 00:00,60,SAMN02981535,51953
+GCA_017589505.3,Metroxylon sagu (sago palm),Metroxylon sagu,,Sago_v3,Scaffold,,,2023/03/06 00:00,50,SAMN15953627,93297
+GCA_028774785.1,Phoenix roebelenii (monocots),Phoenix roebelenii,,Proe.v1.0.fasta,Scaffold,,,2023/02/22 00:00,50,SAMN14770376,446125
+GCA_025769935.1,Phoenix roebelenii (monocots),Phoenix roebelenii,,ASM2576993v1,Scaffold,,,2022/10/20 00:00,95,SAMN14770376,446125
+GCA_021397845.1,Areca catechu (betel palm),Areca catechu,,ASM2139784v1,Chromosome,,,2022/01/11 00:00,100,SAMN19591864,184783
+GCA_015461965.1,Elaeis guineensis (African oil palm),Elaeis guineensis,,EGPMv6,Chromosome,,,2020/11/15 00:00,16,SAMN15063639,51953
+GCA_000181215.3,Phoenix dactylifera (date palm),Phoenix dactylifera,,PDK50,Chromosome,,,2020/02/21 00:00,120,SAMN02981245,42345
+GCF_009389715.1,Phoenix dactylifera (date palm),Phoenix dactylifera,,palm_55x_up_171113_PBpolish2nd_filt_p,Chromosome,,,2019/11/04 00:00,100,SAMN05011615,42345
+GCA_008124465.1,Cocos nucifera (coconut palm),Cocos nucifera,,ASM812446v1,Chromosome,,,2019/08/29 00:00,173.17,SAMN06328965,13894
+GCA_007821505.1,Phoenix dactylifera (date palm),Phoenix dactylifera,,K2_S20_K51.scafSeq,Scaffold,,,2019/08/01 00:00,154,SAMN07425758,42345
+GCA_006176705.1,Cocos nucifera (coconut palm),Cocos nucifera,,UPLB_dcnu_1.0,Scaffold,,,2019/06/10 00:00,50,SAMN09748030,13894
+GCA_900491605.1,Calamus simplicifolius (monocots),Calamus simplicifolius,,Calamus_simplicifolius,Scaffold,,,2018/07/01 00:00,270,SAMEA104450374,746888
+GCA_002146295.1,Elaeis guineensis (African oil palm),Elaeis guineensis,,EG01,Contig,,,2017/05/17 00:00,0.1,SAMN03103722,51953
+GCA_002146275.1,Elaeis oleifera (American oil palm),Elaeis oleifera,,EO01,Contig,,,2017/05/17 00:00,0.05,SAMN03103723,80265
+GCA_001672495.1,Elaeis guineensis (African oil palm),Elaeis guineensis,,ASM167249v1,Scaffold,,,2016/06/20 00:00,20,SAMN03083522,51953
+GCF_000413155.1,Phoenix dactylifera (date palm),Phoenix dactylifera,,DPV01,Scaffold,,,2013/06/24 00:00,139,SAMN02981540,42345

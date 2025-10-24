@@ -1,0 +1,62 @@
+{
+  "diversity_estimates": {
+    "Arecaceae": {
+      "total_species": 2600,
+      "total_genera": 181,
+      "total_subfamilies": 5,
+      "total_tribes_cocoseae": 15,
+      "total_subtribes_cocoseae": 4
+    },
+    "Curculionidae": {
+      "total_species": 51000,
+      "total_genera": 4600,
+      "total_subfamilies": 8
+    }
+  },
+  "arecaceae": {
+    "total_assemblies": 25,
+    "hq_assemblies": 12,
+    "all_species": 11,
+    "hq_species": 6,
+    "all_genera": 9,
+    "hq_genera": 5,
+    "subfamilies": 2,
+    "tribes": 3,
+    "subtribes": 2,
+    "cocoseae_subtribes": 1,
+    "cocoseae_genera": 1,
+    "subfamilies_list": [
+      "Arecoideae",
+      "Coryphoideae"
+    ],
+    "tribes_list": [
+      "Cocoseae",
+      "Phoeniceae",
+      "Trachycarpeae"
+    ],
+    "subtribes_list": [
+      "Butiinae",
+      "Rhapidinae"
+    ],
+    "cocoseae_subtribes_list": [
+      "Butiinae"
+    ]
+  },
+  "curculionidae": {
+    "total_assemblies": 95,
+    "hq_assemblies": 38,
+    "all_species": 51,
+    "hq_species": 31,
+    "all_genera": 35,
+    "hq_genera": 23,
+    "subfamilies": 6,
+    "subfamilies_list": [
+      "Ceutorhynchinae",
+      "Cryptorhynchinae",
+      "Entiminae",
+      "Molytinae",
+      "Platypodinae",
+      "Scolytinae"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+# Higher Taxa in Arecaceae (from Wikidata)
+# Format: rank | taxon name
+
+
+## SUBFAMILY
+# Total: 2
+
+subfamily	Arecoideae
+subfamily	Coryphoideae
+
+## TRIBE
+# Total: 3
+
+tribe	Cocoseae
+tribe	Phoeniceae
+tribe	Trachycarpeae
+
+## SUBTRIBE
+# Total: 3
+
+subtribe	Attaleinae
+subtribe	Butiinae
+subtribe	Rhapidinae
