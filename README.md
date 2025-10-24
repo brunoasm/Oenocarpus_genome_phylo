@@ -108,8 +108,6 @@ bash 08d_astral_species_tree.sh
 - `partition_def.txt` - Partition definitions for IQ-TREE
 - `all_gene_trees.tre` - Individual gene trees
 
-See `METHODS_PARAGRAPH.md` for ready-to-use methods text with citations.
-
 ## Directory Structure
 
 ```
