@@ -1,0 +1,13 @@
+species,accession
+Syagrus_oleracea,GCA_051903695.1
+Borassus_flabellifer,GCA_050948065.1
+Phoenix_roebelenii,GCA_025769935.1
+Calamus_simplicifolius,GCA_900491605.1
+Matroxylon_sagu,GCA_017589505.3
+Chamaerops_humilis,GCA_042465325.1
+Areca_catechu,GCA_021397845.1
+Cocos_nucifera,GCA_003604295.2
+Phoenix_dactylifera,GCF_009389715.1
+Elaeis_guineensis,GCF_000442705.2
+Oryza_sativa,GCF_034140825.1
+

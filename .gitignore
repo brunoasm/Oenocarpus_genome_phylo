@@ -1,0 +1,266 @@
+# Oenocarpus Genome Phylogenomics - .gitignore
+# Keep only code and documentation, exclude all data files
+
+# =============================================================================
+# GENOME DATA FILES
+# =============================================================================
+
+# Raw genome assemblies
+genomes/
+*.fasta
+*.fa
+*.fna
+*.fna.gz
+*.fasta.gz
+*.fa.gz
+
+# Source genomes
+sources/*.fasta
+sources/*.fa
+sources/*.fna
+sources/*.asm.*
+
+# =============================================================================
+# BUSCO/COMPLEASM OUTPUT
+# =============================================================================
+
+# Compleasm results directories
+*_compleasm/
+*_busco/
+
+# BUSCO database downloads
+busco_downloads/
+mb_downloads/
+
+# =============================================================================
+# SEQUENCE DATA
+# =============================================================================
+
+# Ortholog sequences
+single_copy_orthologs/
+*.fas
+*.faa
+*.fna
+
+# Alignment files
+aligned_aa/
+unaligned_aa/
+trimmed_aa/
+
+# Concatenated alignments
+FcC_smatrix.fas
+FcC_smatrix_*.fas
+*.phy
+*.phylip
+*.nex
+*.nexus
+
+# =============================================================================
+# PHYLOGENETIC ANALYSIS OUTPUT
+# =============================================================================
+
+# IQ-TREE output files
+*.treefile
+*.contree
+*.iqtree
+*.log
+*.bionj
+*.mldist
+*.ckp.gz
+*.model.gz
+*.splits.nex
+*.best_model.nex
+*.best_scheme
+*.best_scheme.nex
+*.ufboot
+
+# Gene trees
+all_gene_trees.tre
+gene_trees/
+
+# ASTRAL output
+astral_species_tree.tre
+astral.log
+
+# RAxML output
+RAxML_*
+
+# MrBayes output
+*.mb
+*.run*.p
+*.run*.t
+*.mcmc
+
+# =============================================================================
+# TRIMMING OUTPUT
+# =============================================================================
+
+# Aliscore/ALICUT output
+aliscore_output/
+*_List_random.txt
+*.ALICUT
+trimming_summary.txt
+
+# TrimAl output
+*.trimal
+
+# =============================================================================
+# INTERMEDIATE FILES
+# =============================================================================
+
+# Partition files
+partition_def.txt
+partition_search.*
+FcC_*.xls
+FcC_*.txt
+
+# QC reports with data
+qc_report.csv
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# =============================================================================
+# DOWNLOADED SOFTWARE
+# =============================================================================
+
+# ASTRAL
+ASTRAL*/
+*.jar
+
+# Aliscore/ALICUT scripts (keep these commented out if you want to track them)
+# Aliscore*.pl
+# ALICUT*.pl
+# Aliscore_module.pm
+
+# FASconCAT
+# FASconCAT*.pl
+
+# =============================================================================
+# LOGS AND MONITORING
+# =============================================================================
+
+# Log directories
+logs/
+*.out
+*.err
+
+# SLURM/PBS logs
+slurm-*.out
+*.o[0-9]*
+*.e[0-9]*
+
+# =============================================================================
+# SYSTEM FILES
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =============================================================================
+# EDITOR AND IDE
+# =============================================================================
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.\#*
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm / IntelliJ
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# =============================================================================
+# R
+# =============================================================================
+
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# =============================================================================
+# CONDA ENVIRONMENTS
+# =============================================================================
+
+# Don't ignore the conda environment file itself, but ignore created envs
+# conda-env/
+
+# =============================================================================
+# COMPRESSED FILES
+# =============================================================================
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tar.bz2
+*.gz
+*.bz2
+*.7z
+
+# =============================================================================
+# KEEP THESE FILES (explicit exceptions)
+# =============================================================================
+
+# Keep documentation
+!README.md
+!METHODS_PARAGRAPH.md
+!LICENSE
+
+# Keep scripts
+!*.sh
+!*.py
+!*.pl
+!*.R
+
+# Keep source lists
+!sources/genomes_to_download.txt
+!genome_list.txt
+
+# Keep helper scripts
+!scripts/*.sh
+!scripts/*.py
+!scripts/*.pl
